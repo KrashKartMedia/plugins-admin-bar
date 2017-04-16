@@ -18,19 +18,9 @@ WordPress has the WP Admin Bar at the top of every site. On the front end of the
                       
 == Frequently Asked Questions ==
 
-= What version(s) of WordPress have been tested? =
+= Does this work with Multisite? =
 
-As of now, we've tested the plugin on WordPress Version 4.1 and higher.
-
-= Does this plugin work with all plugins & themes? =
-
-Yes. However, it's impossible to know every post type active on your WordPress website. The post types we do know about, in popular themes and plugins, will be listed as Regular CPT, Hidden CPT, WordPress Core - Regular CPT, WordPress Core - Hidden CPT, Regular CPT, Hidden CPT, WooCommerce Core Regular CPT, WooCommerce Core Hidden CPT. Everything else will be called Other.
-
-A definition is provided in the sidebar of the plugin settings page.
-
-= What are post type definitions? =
-
-We have set up a check to determine if a post type is public facing, hidden or some type of other custom post type. This is to make it easier for the end user to understand why a custom post type might be hidden from the WordPress Navigation Menu.
+Yes. If you're on mutisite, add new plugin link takes you to the newtowrk admin install page. Same for the edit plugins.
 
 == Installation ==
 
