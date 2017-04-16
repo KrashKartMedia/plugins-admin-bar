@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Plugins Admin Bar
- * Plugin URI: https://russellenvy.com
+ * Plugin URI: https://github.com/KrashKartMedia/plugins-admin-bar
  * Description: Add a top level menu item to the admin bar for plugin links.
  * Version: 1.0
  * Author: Russell Aaron
