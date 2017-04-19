@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name: Plugins Admin Bar
- * Plugin URI: https://github.com/KrashKartMedia/plugins-admin-bar
+ * Plugin URI: https://wordpress.org/plugins/plugins-admin-bar/
  * Description: Add a top level menu item to the admin bar for plugin links.
- * Version: 1.1
+ * Version: 1.2
  * Author: Russell Aaron
  * Author URI: http://russellenvy.com
  * Text Domain: plugins-admin-bar
@@ -12,10 +12,12 @@
 	if ( ! defined( 'ABSPATH' ) ) {exit;}
 	// hook into admin bar-menu - add our own links
     add_action('admin_bar_menu', 'plugins_admin_bar_links', 999);
+    
     //kick off the function
     function plugins_admin_bar_links($wp_admin_bar) {
-	    //is multisite
-	    if ( is_multisite() ) {
+    	$plugins_menu_perms = get_site_option( 'menu_items' );
+	    //is multisite && user can manage_network_plugins
+	    if ( is_multisite() && current_user_can('manage_network_options') ) {
 	   	//network parent link under site-name
 	    $args = array(
 		'id' => 'network-plugins',
@@ -148,10 +150,56 @@
 			)
 		);
 		$wp_admin_bar->add_node($args);
-		} 
-		//is_single_site 
-		else {
-			$args = array(
+
+		//is multisite && user can manage_network_plugins
+		}
+		
+		//is_multisite && current user can manage options && plugins menu site option is true
+		else if ( is_multisite() && current_user_can( 'manage_options' ) && isset($plugins_menu_perms['plugins'] ) ) {
+		$args = array(
+		'id' => 'network-single-admin-plugins',
+		'title' => 'Plugins'. print_r($plugins_checked,1), 
+		'href' => admin_url() . 'plugins.php', 
+		'parent' => 'site-name',
+		'meta' => array(
+			'class' => 'network-single-admin-plugins', 
+			'title' => 'View Plugins'
+			)
+		);
+		$wp_admin_bar->add_node($args);
+
+		//Add Active Plugin Child Link to installed-plugins - single site on MS parent link
+		$args = array(
+		'id' => 'network-single-admin-plugins-active',
+		'title' => 'Active Plugins', 
+		'href' => admin_url() . 'plugins.php?plugin_status=active',
+		'parent' => 'network-single-admin-plugins', 
+		'meta' => array(
+			'class' => 'network-single-admin-plugins-', 
+			'title' => 'Active Plugins'
+			)
+		);
+		$wp_admin_bar->add_node($args);
+
+		//Add Inactive Plugin Child Link to installed-plugins  - single site on MS parent link
+		$args = array(
+		'id' => 'network-single-admin-plugins-inactive',
+		'title' => 'Inactive Plugins', 
+		'href' => admin_url() . 'plugins.php?plugin_status=inactive',
+		'parent' => 'network-single-admin-plugins', 
+		'meta' => array(
+			'class' => 'network-single-admin-plugins-inactive', 
+			'title' => 'Inactive Plugins'
+			)
+		);
+		$wp_admin_bar->add_node($args);
+
+		//is_multisite && current user can manage options && plugins menu site option is true
+		}
+
+		//is_single_site && user can manage_options
+		else if ( ! is_multisite() && current_user_can('manage_options') ) {
+		$args = array(
 		'id' => 'single-plugins',
 		'title' => 'Plugins', 
 		'href' => admin_url() . 'plugins.php', 
@@ -241,7 +289,8 @@
 		);
 		$wp_admin_bar->add_node($args);
 
+		//is_single_site && user can manage_options
 		}
-	//stop plugins_admin_bar_links funciton
+	 //kick off the function
 	}
 ?>
