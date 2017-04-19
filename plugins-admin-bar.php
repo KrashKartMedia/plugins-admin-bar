@@ -3,7 +3,7 @@
  * Plugin Name: Plugins Admin Bar
  * Plugin URI: https://wordpress.org/plugins/plugins-admin-bar/
  * Description: Add a top level menu item to the admin bar for plugin links.
- * Version: 1.2
+ * Version: 1.3
  * Author: Russell Aaron
  * Author URI: http://russellenvy.com
  * Text Domain: plugins-admin-bar
@@ -22,7 +22,7 @@
 	    $args = array(
 		'id' => 'network-plugins',
 		'title' => esc_html__( 'Network Plugins', 'plugins-admin-bar' ),
-		'href' => network_admin_url() . 'plugins.php', 
+		'href' => esc_url( network_admin_url( '/plugins.php' ) ), 
 		'parent' => 'site-name',
 		'meta' => array(
 			'class' => 'network-plugins', 
@@ -34,7 +34,7 @@
 		$args = array(
 		'id' => 'network-plugins-add-new',
 		'title' => esc_html__( 'Add New Network Plugin', 'plugins-admin-bar' ),
-		'href' => network_admin_url() . 'plugin-install.php',
+		'href' => esc_url( network_admin_url( '/plugin-install.php' ) ),
 		'parent' => 'network-plugins', 
 		'meta' => array(
 			'class' => 'network-plugins-add-new', 
@@ -46,7 +46,7 @@
 		$args = array(
 		'id' => 'network-plugins-add-popular',
 		'title' => esc_html__( 'Add New Popular Plugin', 'plugins-admin-bar' ), 
-		'href' => network_admin_url() . 'plugin-install.php?tab=popular',
+		'href' => esc_url( network_admin_url( '/plugin-install.php?tab=popular' ) ),
 		'parent' => 'network-plugins-add-new', 
 		'meta' => array(
 			'class' => 'network-plugins-add-popular', 
@@ -58,7 +58,7 @@
 		$args = array(
 		'id' => 'network-plugins-add-recommended',
 		'title' => esc_html__( 'Add New Recommended Plugin', 'plugins-admin-bar' ), 
-		'href' => network_admin_url() . 'plugin-install.php?tab=recommended',
+		'href' => esc_url( network_admin_url( '/plugin-install.php?tab=recommended' ) ),
 		'parent' => 'network-plugins-add-new', 
 		'meta' => array(
 			'class' => 'network-plugins-add-recommended', 
@@ -70,7 +70,7 @@
 		$args = array(
 		'id' => 'network-plugins-add-favorites',
 		'title' => esc_html__( 'Add New Favorites Plugin', 'plugins-admin-bar' ),  
-		'href' => network_admin_url() . 'plugin-install.php?tab=favorites',
+		'href' => esc_url( network_admin_url( '/plugin-install.php?tab=favorites' ) ),
 		'parent' => 'network-plugins-add-new', 
 		'meta' => array(
 			'class' => 'network-plugins-add-favorites', 
@@ -82,7 +82,7 @@
 		$args = array(
 		'id' => 'network-plugins-active',
 		'title' => esc_html__( 'View Network Active Plugins', 'plugins-admin-bar' ), 
-		'href' => network_admin_url() . 'plugins.php?plugin_status=active',
+		'href' => esc_url( network_admin_url( '/plugins.php?plugin_status=active' ) ),
 		'parent' => 'network-plugins', 
 		'meta' => array(
 			'class' => 'network-plugins-active', 
@@ -94,7 +94,7 @@
 		$args = array(
 		'id' => 'network-plugins-inactive',
 		'title' => esc_html__( 'View Network Inactive Plugins', 'plugins-admin-bar' ), 
-		'href' => network_admin_url() . 'plugins.php?plugin_status=inactive',
+		'href' => esc_url( network_admin_url( '/plugins.php?plugin_status=inactive' ) ),
 		'parent' => 'network-plugins', 
 		'meta' => array(
 			'class' => 'network-plugins-inactive', 
@@ -106,7 +106,7 @@
 		$args = array(
 		'id' => 'network-plugins-mustuse',
 		'title' => esc_html__( 'View Network Must Use Plugins','plugins-admin-bar' ), 
-		'href' => network_admin_url() . 'plugins.php?plugin_status=mustuse',
+		'href' => esc_url( network_admin_url( '/plugins.php?plugin_status=mustuse' ) ),
 		'parent' => 'network-plugins', 
 		'meta' => array(
 			'class' => 'network-plugins-mustuse', 
@@ -118,7 +118,7 @@
 	    $args = array(
 		'id' => 'installed-plugins',
 		'title' => esc_html__( 'Plugins', 'plugins-admin-bar' ),
-		'href' => admin_url() . 'plugins.php', 
+		'href' => esc_url( admin_url( '/plugins.php' ) ), 
 		'parent' => 'site-name',
 		'meta' => array(
 			'class' => 'plugins', 
@@ -130,7 +130,7 @@
 		$args = array(
 		'id' => 'active-plugins',
 		'title' => esc_html__( 'Active Plugins', 'plugins-admin-bar' ), 
-		'href' => admin_url() . 'plugins.php?plugin_status=active',
+		'href' => esc_url( admin_url( '/plugins.php?plugin_status=active' ) ),
 		'parent' => 'installed-plugins', 
 		'meta' => array(
 			'class' => 'active-plugins', 
@@ -142,7 +142,7 @@
 		$args = array(
 		'id' => 'inactive-plugins',
 		'title' => esc_html__( 'Inactive Plugins', 'plugins-admin-bar' ),
-		'href' => admin_url() . 'plugins.php?plugin_status=inactive',
+		'href' => esc_url( admin_url( '/plugins.php?plugin_status=inactive' ) ),
 		'parent' => 'installed-plugins', 
 		'meta' => array(
 			'class' => 'inactive-plugins', 
@@ -159,7 +159,7 @@
 		$args = array(
 		'id' => 'network-single-admin-plugins',
 		'title' => esc_html__( 'Plugins', 'plugins-admin-bar' ),
-		'href' => admin_url() . 'plugins.php', 
+		'href' => esc_url( admin_url( '/plugins.php' ) ), 
 		'parent' => 'site-name',
 		'meta' => array(
 			'class' => 'network-single-admin-plugins', 
@@ -172,7 +172,7 @@
 		$args = array(
 		'id' => 'network-single-admin-plugins-active',
 		'title' => esc_html__( 'Active Plugins', 'plugins-admin-bar' ),
-		'href' => admin_url() . 'plugins.php?plugin_status=active',
+		'href' => esc_url( admin_url( '/plugins.php?plugin_status=active' ) ),
 		'parent' => 'network-single-admin-plugins', 
 		'meta' => array(
 			'class' => 'network-single-admin-plugins-', 
@@ -185,7 +185,7 @@
 		$args = array(
 		'id' => 'network-single-admin-plugins-inactive',
 		'title' => esc_html__( 'Inactive Plugins', 'plugins-admin-bar' ),
-		'href' => admin_url() . 'plugins.php?plugin_status=inactive',
+		'href' => esc_url( admin_url( '/plugins.php?plugin_status=inactive' ) ),
 		'parent' => 'network-single-admin-plugins', 
 		'meta' => array(
 			'class' => 'network-single-admin-plugins-inactive', 
@@ -202,7 +202,7 @@
 		$args = array(
 		'id' => 'single-plugins',
 		'title' => esc_html__( 'Plugins', 'plugins-admin-bar' ),
-		'href' => admin_url() . 'plugins.php', 
+		'href' => esc_url( admin_url( '/plugins.php' ) ), 
 		'parent' => 'site-name',
 		'meta' => array(
 			'class' => 'single-plugins', 
@@ -215,7 +215,7 @@
 		$args = array(
 		'id' => 'plugins-add-new',
 		'title' => esc_html__( 'Add New Plugin', 'plugins-admin-bar' ),
-		'href' => admin_url() . 'plugin-install.php',
+		'href' => esc_url( admin_url( '/plugin-install.php' ) ),
 		'parent' => 'single-plugins', 
 		'meta' => array(
 			'class' => 'single-plugins-add-new', 
@@ -228,7 +228,7 @@
 		$args = array(
 		'id' => 'single-plugins-active',
 		'title' => esc_html__( 'Active Plugins', 'plugins-admin-bar' ),
-		'href' => admin_url() . 'plugins.php?plugin_status=active',
+		'href' => esc_url( admin_url( '/plugins.php?plugin_status=active' ) ),
 		'parent' => 'single-plugins', 
 		'meta' => array(
 			'class' => 'single-plugins-active', 
@@ -241,7 +241,7 @@
 		$args = array(
 		'id' => 'single-plugins-inactive',
 		'title' => esc_html__( 'Inactive Plugins', 'plugins-admin-bar' ),
-		'href' => admin_url() . 'plugins.php?plugin_status=inactive',
+		'href' => esc_url( admin_url( '/plugins.php?plugin_status=inactive' ) ),
 		'parent' => 'single-plugins', 
 		'meta' => array(
 			'class' => 'single-plugins-inactive', 
@@ -254,7 +254,7 @@
 		$args = array(
 		'id' => 'single-site-plugins-popular',
 		'title' => esc_html__( 'Add Popuplar Plugins', 'plugins-admin-bar' ),
-		'href' => admin_url() . 'plugin-install.php?tab=popular',
+		'href' => esc_url( admin_url( '/plugin-install.php?tab=popular' ) ),
 		'parent' => 'plugins-add-new', 
 		'meta' => array(
 			'class' => 'single-plugins-popular', 
@@ -267,7 +267,7 @@
 		$args = array(
 		'id' => 'single-site-plugins-recommended',
 		'title' => esc_html__( 'Add Recommended Plugins', 'plugins-admin-bar' ), 
-		'href' => admin_url() . 'plugin-install.php?tab=recommended',
+		'href' => esc_url( admin_url('/plugin-install.php?tab=recommended') ),
 		'parent' => 'plugins-add-new', 
 		'meta' => array(
 			'class' => 'single-plugins-recommended', 
@@ -280,7 +280,7 @@
 		$args = array(
 		'id' => 'single-site-plugins-favorites',
 		'title' => esc_html__( 'Add Favorites Plugins', 'plugins-admin-bar' ),
-		'href' => admin_url() . 'plugin-install.php?tab=favorites',
+		'href' => esc_url( admin_url( '/plugin-install.php?tab=favorites' ) ),
 		'parent' => 'plugins-add-new', 
 		'meta' => array(
 			'class' => 'single-plugins-favorites', 
