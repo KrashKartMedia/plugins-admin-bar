@@ -21,132 +21,132 @@
 	   	//network parent link under site-name
 	    $args = array(
 		'id' => 'network-plugins',
-		'title' => 'Network Plugins', 
+		'title' => esc_html__( 'Network Plugins', 'plugins-admin-bar' ),
 		'href' => network_admin_url() . 'plugins.php', 
 		'parent' => 'site-name',
 		'meta' => array(
 			'class' => 'network-plugins', 
-			'title' => 'View Network Plugins'
+			'title' => esc_html__( 'View Network Plugins', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
 		//Add New Network Plugin Child Link to network-plugins parent link
 		$args = array(
 		'id' => 'network-plugins-add-new',
-		'title' => 'Add New Network Plugin', 
+		'title' => esc_html__( 'Add New Network Plugin', 'plugins-admin-bar' ),
 		'href' => network_admin_url() . 'plugin-install.php',
 		'parent' => 'network-plugins', 
 		'meta' => array(
 			'class' => 'network-plugins-add-new', 
-			'title' => 'Add a new plugin to your network'
+			'title' => esc_html__( 'Add a new plugin to your network', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
 		//Add New Popular Plugin Child Link to network-plugins parent link
 		$args = array(
 		'id' => 'network-plugins-add-popular',
-		'title' => 'Add New Popular Plugin', 
+		'title' => esc_html__( 'Add New Popular Plugin', 'plugins-admin-bar' ), 
 		'href' => network_admin_url() . 'plugin-install.php?tab=popular',
 		'parent' => 'network-plugins-add-new', 
 		'meta' => array(
 			'class' => 'network-plugins-add-popular', 
-			'title' => 'Add a new popular plugin'
+			'title' => esc_html__( 'Add a new popular plugin', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
 		//Add New Recommended Plugin Child Link to network-plugins parent link
 		$args = array(
 		'id' => 'network-plugins-add-recommended',
-		'title' => 'Add New Recommended Plugin', 
+		'title' => esc_html__( 'Add New Recommended Plugin', 'plugins-admin-bar' ), 
 		'href' => network_admin_url() . 'plugin-install.php?tab=recommended',
 		'parent' => 'network-plugins-add-new', 
 		'meta' => array(
 			'class' => 'network-plugins-add-recommended', 
-			'title' => 'Add a new recommended plugin'
+			'title' => esc_html__( 'Add a new recommended plugin', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
 		//Add New Favorites Plugin Child Link to network-plugins parent link
 		$args = array(
 		'id' => 'network-plugins-add-favorites',
-		'title' => 'Add New Favorites Plugin', 
+		'title' => esc_html__( 'Add New Favorites Plugin', 'plugins-admin-bar' ),  
 		'href' => network_admin_url() . 'plugin-install.php?tab=favorites',
 		'parent' => 'network-plugins-add-new', 
 		'meta' => array(
 			'class' => 'network-plugins-add-favorites', 
-			'title' => 'Add a new favorites plugin'
+			'title' => esc_html__( 'Add a new favorites plugin', 'plugins-admin-bar' ), 
 			)
 		);
 		$wp_admin_bar->add_node($args);
 		//Add Active Network Plugin Child Link to network-plugins parent link
 		$args = array(
 		'id' => 'network-plugins-active',
-		'title' => 'View Network Active Plugins', 
+		'title' => esc_html__( 'View Network Active Plugins', 'plugins-admin-bar' ), 
 		'href' => network_admin_url() . 'plugins.php?plugin_status=active',
 		'parent' => 'network-plugins', 
 		'meta' => array(
 			'class' => 'network-plugins-active', 
-			'title' => 'View All Network Activated Plugins'
+			'title' => esc_html__( 'View All Network Activated Plugins', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
 		//Add Inactive Network Plugin Child Link to network-plugins parent link
 		$args = array(
 		'id' => 'network-plugins-inactive',
-		'title' => 'View Network Inactive Plugins', 
+		'title' => esc_html__( 'View Network Inactive Plugins', 'plugins-admin-bar' ), 
 		'href' => network_admin_url() . 'plugins.php?plugin_status=inactive',
 		'parent' => 'network-plugins', 
 		'meta' => array(
 			'class' => 'network-plugins-inactive', 
-			'title' => 'View All Network Inactivated Plugins'
+			'title' => esc_html__( 'View All Network Inactivated Plugins', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
 		//Add Inactive Network Plugin Child Link to network-plugins parent link
 		$args = array(
 		'id' => 'network-plugins-mustuse',
-		'title' => 'View Network Must Use Plugins', 
+		'title' => esc_html__( 'View Network Must Use Plugins','plugins-admin-bar' ), 
 		'href' => network_admin_url() . 'plugins.php?plugin_status=mustuse',
 		'parent' => 'network-plugins', 
 		'meta' => array(
 			'class' => 'network-plugins-mustuse', 
-			'title' => 'View All Network Must Use Plugins'
+			'title' => esc_html__( 'View All Network Must Use Plugins','plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
 		//single site plugins parent link under site-name
 	    $args = array(
 		'id' => 'installed-plugins',
-		'title' => 'Plugins', 
+		'title' => esc_html__( 'Plugins', 'plugins-admin-bar' ),
 		'href' => admin_url() . 'plugins.php', 
 		'parent' => 'site-name',
 		'meta' => array(
 			'class' => 'plugins', 
-			'title' => 'View Plugins'
+			'title' => esc_html__( 'View Plugins', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
 		//View Active Plugin Child Link to installed-plugins parent link
 		$args = array(
 		'id' => 'active-plugins',
-		'title' => 'Active Plugins', 
+		'title' => esc_html__( 'Active Plugins', 'plugins-admin-bar' ), 
 		'href' => admin_url() . 'plugins.php?plugin_status=active',
 		'parent' => 'installed-plugins', 
 		'meta' => array(
 			'class' => 'active-plugins', 
-			'title' => 'Active Plugins'
+			'title' => esc_html__( 'Active Plugins', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
 		//View Inactive Plugin Child Link to installed-plugins parent link
 		$args = array(
 		'id' => 'inactive-plugins',
-		'title' => 'Inactive Plugins', 
+		'title' => esc_html__( 'Inactive Plugins', 'plugins-admin-bar' ),
 		'href' => admin_url() . 'plugins.php?plugin_status=inactive',
 		'parent' => 'installed-plugins', 
 		'meta' => array(
 			'class' => 'inactive-plugins', 
-			'title' => 'Inactive Plugins'
+			'title' => esc_html__( 'Inactive Plugins', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
@@ -158,12 +158,12 @@
 		else if ( is_multisite() && current_user_can( 'manage_options' ) && isset($plugins_menu_perms['plugins'] ) ) {
 		$args = array(
 		'id' => 'network-single-admin-plugins',
-		'title' => 'Plugins'. print_r($plugins_checked,1), 
+		'title' => esc_html__( 'Plugins', 'plugins-admin-bar' ),
 		'href' => admin_url() . 'plugins.php', 
 		'parent' => 'site-name',
 		'meta' => array(
 			'class' => 'network-single-admin-plugins', 
-			'title' => 'View Plugins'
+			'title' => esc_html__( 'View Plugins', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
@@ -171,12 +171,12 @@
 		//Add Active Plugin Child Link to installed-plugins - single site on MS parent link
 		$args = array(
 		'id' => 'network-single-admin-plugins-active',
-		'title' => 'Active Plugins', 
+		'title' => esc_html__( 'Active Plugins', 'plugins-admin-bar' ),
 		'href' => admin_url() . 'plugins.php?plugin_status=active',
 		'parent' => 'network-single-admin-plugins', 
 		'meta' => array(
 			'class' => 'network-single-admin-plugins-', 
-			'title' => 'Active Plugins'
+			'title' => esc_html__( 'Active Plugins', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
@@ -184,12 +184,12 @@
 		//Add Inactive Plugin Child Link to installed-plugins  - single site on MS parent link
 		$args = array(
 		'id' => 'network-single-admin-plugins-inactive',
-		'title' => 'Inactive Plugins', 
+		'title' => esc_html__( 'Inactive Plugins', 'plugins-admin-bar' ),
 		'href' => admin_url() . 'plugins.php?plugin_status=inactive',
 		'parent' => 'network-single-admin-plugins', 
 		'meta' => array(
 			'class' => 'network-single-admin-plugins-inactive', 
-			'title' => 'Inactive Plugins'
+			'title' => esc_html__( 'Inactive Plugins', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
@@ -201,12 +201,12 @@
 		else if ( ! is_multisite() && current_user_can('manage_options') ) {
 		$args = array(
 		'id' => 'single-plugins',
-		'title' => 'Plugins', 
+		'title' => esc_html__( 'Plugins', 'plugins-admin-bar' ),
 		'href' => admin_url() . 'plugins.php', 
 		'parent' => 'site-name',
 		'meta' => array(
 			'class' => 'single-plugins', 
-			'title' => 'View Plugins'
+			'title' => esc_html__( 'View Plugins', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
@@ -214,12 +214,12 @@
 		//Add New Plugin Child Link to installed-plugins parent link
 		$args = array(
 		'id' => 'plugins-add-new',
-		'title' => 'Add New Plugin', 
+		'title' => esc_html__( 'Add New Plugin', 'plugins-admin-bar' ),
 		'href' => admin_url() . 'plugin-install.php',
 		'parent' => 'single-plugins', 
 		'meta' => array(
 			'class' => 'single-plugins-add-new', 
-			'title' => 'Add a new plugin'
+			'title' => esc_html__( 'Add a new plugin', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
@@ -227,12 +227,12 @@
 		//Add Active Plugin Child Link to installed-plugins parent link
 		$args = array(
 		'id' => 'single-plugins-active',
-		'title' => 'Active Plugins', 
+		'title' => esc_html__( 'Active Plugins', 'plugins-admin-bar' ),
 		'href' => admin_url() . 'plugins.php?plugin_status=active',
 		'parent' => 'single-plugins', 
 		'meta' => array(
 			'class' => 'single-plugins-active', 
-			'title' => 'Active Plugins'
+			'title' => esc_html__( 'Active Plugins', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
@@ -240,12 +240,12 @@
 		//Add Inactive Plugin Child Link to installed-plugins parent link
 		$args = array(
 		'id' => 'single-plugins-inactive',
-		'title' => 'Inactive Plugins', 
+		'title' => esc_html__( 'Inactive Plugins', 'plugins-admin-bar' ),
 		'href' => admin_url() . 'plugins.php?plugin_status=inactive',
 		'parent' => 'single-plugins', 
 		'meta' => array(
 			'class' => 'single-plugins-inactive', 
-			'title' => 'Inactive Plugins'
+			'title' => esc_html__( 'Inactive Plugins', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
@@ -253,12 +253,12 @@
 		// Add popular link to the installed-plugins link
 		$args = array(
 		'id' => 'single-site-plugins-popular',
-		'title' => 'Add Popuplar Plugins', 
+		'title' => esc_html__( 'Add Popuplar Plugins', 'plugins-admin-bar' ),
 		'href' => admin_url() . 'plugin-install.php?tab=popular',
 		'parent' => 'plugins-add-new', 
 		'meta' => array(
 			'class' => 'single-plugins-popular', 
-			'title' => 'Add popular plugins'
+			'title' => esc_html__( 'Add popular plugins', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
@@ -266,12 +266,12 @@
 		// Add recommended link to the installed-plugins link
 		$args = array(
 		'id' => 'single-site-plugins-recommended',
-		'title' => 'Add Recommended Plugins', 
+		'title' => esc_html__( 'Add Recommended Plugins', 'plugins-admin-bar' ), 
 		'href' => admin_url() . 'plugin-install.php?tab=recommended',
 		'parent' => 'plugins-add-new', 
 		'meta' => array(
 			'class' => 'single-plugins-recommended', 
-			'title' => 'Add recommended plugins'
+			'title' => esc_html__( 'Add recommended plugins', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
@@ -279,12 +279,12 @@
 		// Add favorites link to the installed-plugins link
 		$args = array(
 		'id' => 'single-site-plugins-favorites',
-		'title' => 'Add Favorites Plugins', 
+		'title' => esc_html__( 'Add Favorites Plugins', 'plugins-admin-bar' ),
 		'href' => admin_url() . 'plugin-install.php?tab=favorites',
 		'parent' => 'plugins-add-new', 
 		'meta' => array(
 			'class' => 'single-plugins-favorites', 
-			'title' => 'Add favorites plugins'
+			'title' => esc_html__( 'Add favorites plugins', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
