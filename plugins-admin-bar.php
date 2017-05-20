@@ -3,7 +3,7 @@
  * Plugin Name: Plugins Admin Bar
  * Plugin URI: https://wordpress.org/plugins/plugins-admin-bar/
  * Description: Add a top level menu item to the admin bar for plugin links.
- * Version: 1.3
+ * Version: 1.4
  * Author: Russell Aaron
  * Author URI: http://russellenvy.com
  * Text Domain: plugins-admin-bar
@@ -114,6 +114,53 @@
 			)
 		);
 		$wp_admin_bar->add_node($args);
+
+		//if recently active plugins
+		if (get_site_option( 'recently_activated', array() ) ){
+		//Add Recently Active Plugins Child Link to network-plugins parent link
+		$args = array(
+		'id' => 'network-plugins-recently-active',
+		'title' => esc_html__( 'View Recenlty Active Plugins','plugins-admin-bar' ), 
+		'href' => esc_url( network_admin_url( '/plugins.php?plugin_status=recently_activated' ) ),
+		'parent' => 'network-plugins', 
+		'meta' => array(
+			'class' => 'network-plugins-recently-active', 
+			'title' => esc_html__( 'View Recently Active Plugins','plugins-admin-bar' ),
+			)
+		);
+		$wp_admin_bar->add_node($args);
+		//if recently active plugins
+		}
+
+		if (get_site_option( 'wpmu_plugins', array() ) ){
+			//Add Recently Active Plugins Child Link to network-plugins parent link
+		$args = array(
+		'id' => 'network-plugins-must-use-tes',
+		'title' => esc_html__( 'MU TEST','plugins-admin-bar' ), 
+		'href' => esc_url( network_admin_url( '/plugins.php?plugin_status=mustuse' ) ),
+		'parent' => 'network-plugins', 
+		'meta' => array(
+			'class' => 'network-plugins-must-use-tes', 
+			'title' => esc_html__( 'MU TEST','plugins-admin-bar' ),
+			)
+		);
+		$wp_admin_bar->add_node($args);
+
+		}
+
+		//Add Plugin Editor Child Link to network-plugins parent link
+		$args = array(
+		'id' => 'network-plugins-editor',
+		'title' => esc_html__( 'Plugin Editor','plugins-admin-bar' ), 
+		'href' => esc_url( network_admin_url( '/plugin-editor.php' ) ),
+		'parent' => 'network-plugins', 
+		'meta' => array(
+			'class' => 'network-plugins-editor', 
+			'title' => esc_html__( 'Plugin Editor','plugins-admin-bar' ),
+			)
+		);
+		$wp_admin_bar->add_node($args);
+
 		//single site plugins parent link under site-name
 	    $args = array(
 		'id' => 'installed-plugins',
@@ -129,27 +176,44 @@
 		//View Active Plugin Child Link to installed-plugins parent link
 		$args = array(
 		'id' => 'active-plugins',
-		'title' => esc_html__( 'Active Plugins', 'plugins-admin-bar' ), 
+		'title' => esc_html__( 'View Active Plugins', 'plugins-admin-bar' ), 
 		'href' => esc_url( admin_url( '/plugins.php?plugin_status=active' ) ),
 		'parent' => 'installed-plugins', 
 		'meta' => array(
 			'class' => 'active-plugins', 
-			'title' => esc_html__( 'Active Plugins', 'plugins-admin-bar' ),
+			'title' => esc_html__( 'View Active Plugins', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
 		//View Inactive Plugin Child Link to installed-plugins parent link
 		$args = array(
 		'id' => 'inactive-plugins',
-		'title' => esc_html__( 'Inactive Plugins', 'plugins-admin-bar' ),
+		'title' => esc_html__( 'View Inactive Plugins', 'plugins-admin-bar' ),
 		'href' => esc_url( admin_url( '/plugins.php?plugin_status=inactive' ) ),
 		'parent' => 'installed-plugins', 
 		'meta' => array(
 			'class' => 'inactive-plugins', 
-			'title' => esc_html__( 'Inactive Plugins', 'plugins-admin-bar' ),
+			'title' => esc_html__( 'View Inactive Plugins', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
+
+		//if recently active plugins
+		if (get_site_option( 'recently_activated', array() ) ){
+		//Add Recently Active Plugins Child Link to network-plugins parent link
+		$args = array(
+		'id' => 'recently-active-plugins',
+		'title' => esc_html__( 'View Recetnly Active Plugins', 'plugins-admin-bar' ),
+		'href' => esc_url( admin_url( '/plugins.php?plugin_status=recently_activated' ) ),
+		'parent' => 'installed-plugins', 
+		'meta' => array(
+			'class' => 'recently-active-plugins', 
+			'title' => esc_html__( 'View Recently Active Plugins', 'plugins-admin-bar' ),
+			)
+		);
+		$wp_admin_bar->add_node($args);
+		//if recently active plugins
+		}
 
 		//is multisite && user can manage_network_plugins
 		}
@@ -176,7 +240,7 @@
 		'parent' => 'network-single-admin-plugins', 
 		'meta' => array(
 			'class' => 'network-single-admin-plugins-', 
-			'title' => esc_html__( 'Active Plugins', 'plugins-admin-bar' ),
+			'title' => esc_html__( 'View Active Plugins', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
@@ -189,7 +253,7 @@
 		'parent' => 'network-single-admin-plugins', 
 		'meta' => array(
 			'class' => 'network-single-admin-plugins-inactive', 
-			'title' => esc_html__( 'Inactive Plugins', 'plugins-admin-bar' ),
+			'title' => esc_html__( 'View Inactive Plugins', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
@@ -227,12 +291,12 @@
 		//Add Active Plugin Child Link to installed-plugins parent link
 		$args = array(
 		'id' => 'single-plugins-active',
-		'title' => esc_html__( 'Active Plugins', 'plugins-admin-bar' ),
+		'title' => esc_html__( 'View Active Plugins', 'plugins-admin-bar' ),
 		'href' => esc_url( admin_url( '/plugins.php?plugin_status=active' ) ),
 		'parent' => 'single-plugins', 
 		'meta' => array(
 			'class' => 'single-plugins-active', 
-			'title' => esc_html__( 'Active Plugins', 'plugins-admin-bar' ),
+			'title' => esc_html__( 'View Active Plugins', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);
@@ -240,12 +304,42 @@
 		//Add Inactive Plugin Child Link to installed-plugins parent link
 		$args = array(
 		'id' => 'single-plugins-inactive',
-		'title' => esc_html__( 'Inactive Plugins', 'plugins-admin-bar' ),
+		'title' => esc_html__( 'View Inactive Plugins', 'plugins-admin-bar' ),
 		'href' => esc_url( admin_url( '/plugins.php?plugin_status=inactive' ) ),
 		'parent' => 'single-plugins', 
 		'meta' => array(
 			'class' => 'single-plugins-inactive', 
-			'title' => esc_html__( 'Inactive Plugins', 'plugins-admin-bar' ),
+			'title' => esc_html__( 'View Inactive Plugins', 'plugins-admin-bar' ),
+			)
+		);
+		$wp_admin_bar->add_node($args);
+
+		//if recently active plugins
+		if (get_site_option( 'recently_activated', array() ) ){
+		//Add Plugin Editor Child Link to installed-plugins parent link
+		$args = array(
+		'id' => 'single-plugins-recently-active',
+		'title' => esc_html__( 'View Recently Active Plugins', 'plugins-admin-bar' ),
+		'href' => esc_url( admin_url( '/plugins.php?plugin_status=recently_activated' ) ),
+		'parent' => 'single-plugins', 
+		'meta' => array(
+			'class' => 'single-plugins-recently-active', 
+			'title' => esc_html__( 'View Recently Active Plugins', 'plugins-admin-bar' ),
+			)
+		);
+		$wp_admin_bar->add_node($args);
+		//if recently active plugins
+		}
+
+		//Add Plugin Editor Child Link to installed-plugins parent link
+		$args = array(
+		'id' => 'single-plugins-editor',
+		'title' => esc_html__( 'Plugin Editor', 'plugins-admin-bar' ),
+		'href' => esc_url( admin_url( '/plugin-editor.php' ) ),
+		'parent' => 'single-plugins', 
+		'meta' => array(
+			'class' => 'single-plugins-editor', 
+			'title' => esc_html__( 'Plugin Editor', 'plugins-admin-bar' ),
 			)
 		);
 		$wp_admin_bar->add_node($args);

@@ -4,7 +4,7 @@ Author URI: https://wordpress.org/plugins/plugins-admin-bar/
 Tags: plugin, plugins, admin, wp-admin-bar,
 Requires at least: 4.1
 Tested up to: 4.7.3
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -78,6 +78,12 @@ This section describes how to install the plugin and get it working.
 2. A multisite network can view network active, inactive and must use plugins. Can add new, popular, recommended and favorite plugins. Can view active single site active and inactive plugins.
 
 == Changelog ==
+
+= 1.4 =
+
+* Added: Link to plugin editor
+* Added: If a plugin was deavtived, adds recently active plugin quicklink.
+* Fixed: Few minor tweaks to the order of appearance.
 
 = 1.3 =
 * Minor Changes. Just needed to escape some stuff.
