@@ -16,25 +16,27 @@ Plugins are amazing tools in the WordPress ecosystem. Every WordPress site has a
 
 WordPress has the WP Admin Bar at the top of every site. On the front end of the site, you'll see the name of your site as a link to /wp-admin/. Under the Site Name, there is a sub-menu with quick links to the Dashboard, Themes, Widgets, and Menus.
 
-= What shows up when the plugin is installed on a single install of WordPress? =
+= How It Works on a Single Install =
 
-Plugin Admin Bar adds a new menu item to the quick links sub-menu, called Plugins, for a single site install. 
+Install the plugin and click activate. In the WP Admin Bar, at the top of your WordPress Site, hover your mouse on the +New Menu Item.
+Inside is a list of the new things you can add to your site. You'll notice a menu item called "PLugins". Click to add a new plugin, or you can hover over the Plugins menu item and add a new plugin from the Popular, Recommended, and Favorites list.
 
-The new menu item has it's own sub menu with quick links to Add a new plugin, add new popular plugin, add new recommended plugin, add new favorite plugin, view active plugins, and view inactive plugins.
+In the WP Admin Bar, find the menu item with the Site Title. It has a house icon to the left. Hover over the Site Title menu item and you'll now see "Plugins" included in this list as well. From here, you'll be able to see Active and Inactive plugins.
 
-= What shows up when the plugin is installed on a multisite install of WordPress and I am a Super Admin? =
+= How It Works on a Multisite Install =
 
-Plugin Admin Bar adds two new menu item to the quick links sub-menu, called Plugins and Network Plugins, for a multisite install, as long as you are the Super Admin of the multisite network. 
+If you're a super admin (you can manage the entire site):
 
-The two new menu items have their own sub menu items with quick links to Add a new network plugin, add new popular plugin, add new recommended plugin, add new favorite plugin, view network active plugins, and view network inactive plugins, and view network must use plugins. You can also view plugins active or inactive for a single site.
+Install the plugin and click activate. In the WP Admin Bar, at the top of your WordPress Site, hover your mouse on the +New Menu Item.
+Inside is a list of the new things you can add to your site. You'll notice a menu item called "PLugins". Click to add a new plugin to the network, or you can hover over the Plugins menu item and add a new Popular, Recommended, and Favorites plugin to the network.
 
-= What shows up when the plugin is installed on a multisite install of WordPress and I am an Admin? =
+You'll see two new menu items under the Site Title menu item in the WP Admin Bar.
+"Network Plugins" & "Plugins" now appear under the Site Title. Under the "Network Plugins" menu item, you can see all of the Network Active, Inactive and Must use plugins. Under the "Plugins" menu item, you can see the Active and Inactive for each sub-site on the network.
 
-If you are a single site admin, on multisite, you'll only see all plugins, active & inactive plugins in the dropdown menu item.
+If you are an admin of a sub-site (you can only activate/deactive plugins):
+You will only see the "Plugins" menu item under the Site Title. You'll only be able to see the Active and Inactive plugins on your sub-site. Remember, only a super admin can add a plugin.
 
-See screenshots for more information.
-
-With Plugins Admin Bar, you'll never have to click 4 or 5 times just to install a new plugin, ever again.
+With Plugins Admin Bar, you'll never have to click 4 or 5 times just to view or install or a new plugin, ever again.
                       
 == Frequently Asked Questions ==
 
@@ -74,16 +76,16 @@ This section describes how to install the plugin and get it working.
 
 == Screenshots ==
 
-1. A single site can view active and inactive plugins, add a new plugin or add popular, recommended and favorite plugins.
-2. A multisite network can view network active, inactive and must use plugins. Can add new, popular, recommended and favorite plugins. Can view active single site active and inactive plugins.
+1. A single site can view active and inactive plugins, add a new plugin or add popular, recommended and favorite plugins. Please be advised, this photo is from version 1.3.
+2. A multisite network can view network active, inactive and must use plugins. Can add new, popular, recommended and favorite plugins. Can view active single site active and inactive plugins. Please be advised, this photo is from version 1.3.
 
 == Changelog ==
 
 = 1.4 =
-
-* Added: Link to plugin editor
-* Added: If a plugin was deavtived, adds recently active plugin quicklink.
-* Fixed: Few minor tweaks to the order of appearance.
+* Added: Plugin quicklink to the +New drop down in WP Admin Bar.
+* Added: Single Site Install will now display "Recently Active" menu item if a plugin has been recently deacitvated in the allowed time frame the notice fires off. When plugin is Reactivated, menu item hides again.
+* Fixed: Moved Add New Popular, Recommended, and Favorites plugins to the Drop down link in +New quicklink.
+* Fixed: Menu items are only two levels deep, not three.
 
 = 1.3 =
 * Minor Changes. Just needed to escape some stuff.
