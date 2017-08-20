@@ -3,8 +3,8 @@ Contributors: GeekStreetWP, binarygary
 Author URI: https://wordpress.org/plugins/plugins-admin-bar/
 Tags: plugin, plugins, admin, wp-admin-bar,
 Requires at least: 4.1
-Tested up to: 4.7.3
-Stable tag: 1.4
+Tested up to: 4.8.1
+Stable tag: 1.5
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,6 +80,13 @@ This section describes how to install the plugin and get it working.
 2. A multisite network can view network active, inactive and must use plugins. Can add new, popular, recommended and favorite plugins. Can view active single site active and inactive plugins. Please be advised, this photo is from version 1.3.
 
 == Changelog ==
+
+= 1.5 =
+
+* Fixed: Showed active and inactive plugins under the site title on every wp-admin screen. Now only shows when you're on the front end.
+* Fixed: Grammar and punctuation.
+* Added: Upload Plugin Button. Find the +New link in the WP-Admin Bar. In the Drop Down, you'll see New PLugin and Upload A Plugin.
+* Bump Version Number.
 
 = 1.4 =
 * Added: Plugin quicklink to the +New drop down in WP Admin Bar.
