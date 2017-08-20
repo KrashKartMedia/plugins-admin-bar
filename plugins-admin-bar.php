@@ -3,7 +3,7 @@
  * Plugin Name: Plugins Admin Bar
  * Plugin URI: https://wordpress.org/plugins/plugins-admin-bar/
  * Description: Add a top level menu item to the admin bar for plugin links.
- * Version: 1.4
+ * Version: 1.5
  * Author: Russell Aaron
  * Author URI: http://russellenvy.com
  * Text Domain: plugins-admin-bar
@@ -211,6 +211,20 @@
 			)
 		);
 		$wp_admin_bar->add_node($args);
+		//Adds Upload Plugin link to new-content tab
+	    $args = array(
+		'id' => 'upload-a-new-plugin-single-plugins',
+		'title' => esc_html__( 'Upload A Plugin', 'plugins-admin-bar' ),
+		'href' => esc_url( network_admin_url( '/plugin-install.php?tab=upload' ) ),
+		'parent' => 'new-content',
+		'meta' => array(
+			'class' => 'upload-a-new-plugin-single-plugins', 
+			'title' => esc_html__( 'Upload a Plugin', 'plugins-admin-bar' ),
+			)
+		);
+		$wp_admin_bar->add_node($args);
+		//hide plugins-active-inactive from wp-admin screens
+		if ( ! is_admin() ) {
 		$args = array(
 		'id' => 'single-plugins',
 		'title' => esc_html__( 'Plugins', 'plugins-admin-bar' ),
@@ -248,6 +262,8 @@
 			)
 		);
 		$wp_admin_bar->add_node($args);
+		//hide plugins-active-inactive from wp-admin screens
+		}
 		//if recently active plugins
 		if (get_site_option( 'recently_activated', array() ) ){
 		//Add Recently Active Plugins Child Link to network-plugins parent link
