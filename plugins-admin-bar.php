@@ -30,6 +30,20 @@
 			)
 		);
 		$wp_admin_bar->add_node($args);
+		//Adds Upload Plugin link to new-content tab
+	    $args = array(
+		'id' => 'upload-a-new-plugin-network-plugins',
+		'title' => esc_html__( 'Upload A Plugins', 'plugins-admin-bar' ),
+		'href' => esc_url( network_admin_url( '/plugin-install.php?tab=upload' ) ),
+		'parent' => 'new-content',
+		'meta' => array(
+			'class' => 'upload-a-new-plugin-network-plugins', 
+			'title' => esc_html__( 'Upload A Plugin', 'plugins-admin-bar' ),
+			)
+		);
+		$wp_admin_bar->add_node($args);
+		//hide plugins-active-inactive from wp-admin screens
+		if ( ! is_admin() ) {
 	   	//Adds network parent link under site-name
 	    $args = array(
 		'id' => 'network-plugins',
@@ -42,6 +56,8 @@
 			)
 		);
 		$wp_admin_bar->add_node($args);
+		//hide plugins-active-inactive from wp-admin screens
+		}
 		//Add New Popular Plugin Child Link to network-plugins parent link
 		$args = array(
 		'id' => 'network-plugins-add-popular',
@@ -114,6 +130,8 @@
 			)
 		);
 		$wp_admin_bar->add_node($args);
+		//hide plugins-active-inactive from wp-admin screens
+		if ( ! is_admin() ) {
 		//single site plugins parent link under site-name
 	    $args = array(
 		'id' => 'installed-plugins',
@@ -126,6 +144,8 @@
 			)
 		);
 		$wp_admin_bar->add_node($args);
+		//hide plugins-active-inactive from wp-admin screens
+		}
 		//View Active Plugin Child Link to installed-plugins parent link
 		$args = array(
 		'id' => 'active-plugins',
@@ -156,6 +176,8 @@
 		
 		//is_multisite && current user can manage options && plugins menu site option is true
 		else if ( is_multisite() && current_user_can( 'manage_options' ) && isset($plugins_menu_perms['plugins'] ) ) {
+		//hide plugins-active-inactive from wp-admin screens
+		if ( ! is_admin() ) {
 		$args = array(
 		'id' => 'network-single-admin-plugins',
 		'title' => esc_html__( 'Plugins', 'plugins-admin-bar' ),
@@ -167,7 +189,7 @@
 			)
 		);
 		$wp_admin_bar->add_node($args);
-
+		}
 		//Add Active Plugin Child Link to installed-plugins - single site on MS parent link
 		$args = array(
 		'id' => 'network-single-admin-plugins-active',
