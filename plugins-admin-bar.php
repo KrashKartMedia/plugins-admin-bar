@@ -306,7 +306,7 @@
 		// Add popular link to the installed-plugins link
 		$args = array(
 		'id' => 'single-site-plugins-popular',
-		'title' => esc_html__( 'Add Popuplar Plugins', 'plugins-admin-bar' ),
+		'title' => esc_html__( 'Add Popular Plugins', 'plugins-admin-bar' ),
 		'href' => esc_url( admin_url( '/plugin-install.php?tab=popular' ) ),
 		'parent' => 'add-a-new-plugin-single-plugins', 
 		'meta' => array(
